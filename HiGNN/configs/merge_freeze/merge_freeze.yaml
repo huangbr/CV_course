@@ -1,0 +1,35 @@
+OUTPUT_DIR: './test/merge_freeze'
+TAG: 'default'
+SEED: 2030
+NUM_FOLDS: 10
+HYPER: True
+HYPER_REMOVE: None
+NUM_ITERS: 30
+
+
+DATA:
+  BATCH_SIZE: 64
+  DATASET: 'merge'
+  DATA_PATH: './data/merge_freeze/'
+  TASK_TYPE: 'classification'
+  METRIC: 'auc'   # acc/auc/prc/rmse/mae
+  SPLIT_TYPE: 'random'  # random/scaffold/noise
+  
+
+MODEL:
+  F_ATT: False
+  BRICS: False
+  
+
+LOSS:
+  FL_LOSS: False
+  CL_LOSS: False
+
+
+TRAIN:
+  EARLY_STOP: 50
+  MAX_EPOCHS: 500
+  OPTIMIZER:
+    TYPE: 'adam'
+  LR_SCHEDULER:
+    TYPE: 'reduce'

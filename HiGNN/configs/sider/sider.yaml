@@ -1,0 +1,36 @@
+OUTPUT_DIR: './HiGNN/test/sider'
+TAG: 'default'
+SEED: 1
+NUM_FOLDS: 10
+HYPER: True
+HYPER_REMOVE: None
+NUM_ITERS: 30
+
+
+DATA:
+  BATCH_SIZE: 64
+  DATASET: 'sider'
+  DATA_PATH: './HiGNN/data/sider/'
+  TASK_TYPE: 'classification'
+  METRIC: 'auc'
+  SPLIT_TYPE: 'random'
+  RANDOM_NUM: 1
+
+
+MODEL:
+  F_ATT: True
+  BRICS: True
+
+
+LOSS:
+  FL_LOSS: False
+  CL_LOSS: False
+
+
+TRAIN:
+  EARLY_STOP: 50
+  MAX_EPOCHS: 100
+  OPTIMIZER:
+    TYPE: 'adam'
+  LR_SCHEDULER:
+    TYPE: 'reduce'
